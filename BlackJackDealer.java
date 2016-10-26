@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 
 public class BlackJackDealer {
 
@@ -6,26 +8,29 @@ public class BlackJackDealer {
 	 */
 	public static void main(String[] args) {
 		
+		Player p1 = new Player("Matt");
+	
 		
-		Card c1 = new Card();
-		c1.randomCard();
+		Dealer.dealCard(p1);
+		Dealer.dealCard(p1);
 		
-		System.out.println(c1.getCard());
+		Player p2 = new Player("Kayt");
 		
-		c1.randomCard();
+		Dealer.dealCard(p2);
+		Dealer.dealCard(p2);
 		
-		System.out.println(c1.getCard());
+		p1.printHand();
+		System.out.println("Hand Value: " + Dealer.calcScore(p1));
+		p2.printHand();
+		System.out.println("Hand Value: " + Dealer.calcScore(p2));
 		
-
-		c1.randomCard();
+	    System.out.println("\n");
+		Card.print();
 		
-		System.out.println(c1.getCard());
-
-		c1.randomCard();
 		
-		System.out.println(c1.getCard());
 		
-		c1.print();
+		
+		
 	}
 
 }
