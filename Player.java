@@ -4,6 +4,7 @@ public class Player {
 	public String[] hand;
 	private int count;
 	private String name;
+	private int score;
 
 	
 	
@@ -12,6 +13,7 @@ public class Player {
 		name = "NoName";
 		hand = new String[50];		
 		count = 0;
+		score = 0;
 	}
 	
 	public Player(String name){
@@ -19,6 +21,7 @@ public class Player {
 		setName(name);
 		count = 0;
 		hand = new String[50];
+		score = 0;
 		
 	}
 	
@@ -39,6 +42,16 @@ public class Player {
 		return count;
 	}
 	
+	public void setScore(int n){
+		
+		this.score = n;
+		
+	}
+	
+	public int getScore(){
+		
+		return score;
+	}
 	
 	public void addToHand(String card){
 		

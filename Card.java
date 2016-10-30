@@ -84,7 +84,8 @@ public class Card {
 				count++;
 				flag = false;
 			}
-		}		
+		}
+		
 		return card;
 	}
 
