@@ -24,13 +24,13 @@ public class Dealer {
 			
 		System.out.print(p1.getName() + "'s Initial Hand: ");
 		p1.printHand();
-		System.out.println("Hand value: " + Dealer.calcScore(p1));
+		System.out.println(Dealer.calcScore(p1));
 		
 		System.out.println("\n");
 		
 		System.out.print(p2.getName() + "'s Initial Hand: ");
 		p2.printHand();
-		System.out.println("Hand value: " + Dealer.calcScore(p2));
+		System.out.println(Dealer.calcScore(p2));
 		
 		Dealer.prompt(p1, p2);
 		
@@ -46,7 +46,7 @@ public class Dealer {
 
 	public static int calcScore(Player p1){
 		int score = 0;
-		System.out.print("\nCurrent hand value: ");
+		System.out.print("\n" + p1.getName() + "'s current hand value: ");
 		for (int i = 0; i < p1.hand.length ; i ++){
 			if (p1.hand[i] == null){
 				score = score + 0;
