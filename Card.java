@@ -1,10 +1,8 @@
-import java.nio.charset.Charset;
 import java.util.Scanner;
 
 
 public class Card {
 
-	private int value;
 	private static String card;
 	public static int count = 0;
 
@@ -12,33 +10,7 @@ public class Card {
 	private static final String[] Cards = { "void", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 	public static String[] usedCards = new String[52];
 
-
-	public Card(){
-
-		value = 0;
-		card = null;
-	}
-
-	public void setCard(String card){
-
-		this.card = card;
-	}
-
-	public String getCard(){
-
-		return card;
-	}
-
-	public void setValue(int value){
-
-		this.value = value;
-	}
-
-	public int getValue(){
-
-		return value;
-	}
-
+	
 	public static String randomCard(){
 
 		String card = null;
@@ -89,8 +61,6 @@ public class Card {
 		return card;
 	}
 
-
-
 	public static int assignValue(String card){
 
 		int val = 0;
@@ -107,8 +77,20 @@ public class Card {
 			else if (c == 'A'){
 				Scanner kb = new Scanner(System.in);
 				System.out.println("Please choose the value for Ace (1 or 11): ");
-				int userChoice = kb.nextInt();
-				val = userChoice;
+				String userChoice = kb.nextLine();
+				if (userChoice.equals("1")){
+					val = 1;
+				}
+				
+				else if (userChoice.equals("11")){
+				val = 11;
+				}
+				
+				else {
+					System.out.println("Error: Please enter either 1 or 11.");
+					System.exit(0);
+				}
+				
 			}
 			else if (Character.isLetter(c) == true){
 				val = 10;
